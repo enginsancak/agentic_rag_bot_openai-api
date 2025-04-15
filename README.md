@@ -92,21 +92,21 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 
 **Process Flow**
 
-**1.Environment Setup & Credential Loading**
+**1. Environment Setup & Credential Loading**
 - API keys and connection URLs (OpenAI, Tavily, Qdrant) are loaded from the .env file.
 - Required clients (OpenAI, QdrantClient) are initialized.
 
-Collection Management
-→ The user either creates a new Qdrant collection or selects an existing one via the Streamlit sidebar.
-→ Collections are retrieved using qdrant_client.get_collections() and displayed as buttons.
-→ An active collection must be selected before uploading or retrieving data.
+**2. Collection Management**
+- The user either creates a new Qdrant collection or selects an existing one via the Streamlit sidebar.
+- Collections are retrieved using qdrant_client.get_collections() and displayed as buttons.
+- An active collection must be selected before uploading or retrieving data.
 
-Document Upload
-→ The user uploads one or more PDF files via the UI.
+**3. Document Upload**
+- The user uploads one or more PDF files via the UI.
 
-PDF Processing
-→ Uploaded PDF files are read page-by-page using pdfplumber.
-→ All text is merged and converted into clean plain text.
+**4. PDF Processing**
+- Uploaded PDF files are read page-by-page using pdfplumber.
+- All text is merged and converted into clean plain text.
 
 Text Chunking
 → The full text is split into chunks using RecursiveCharacterTextSplitter.
