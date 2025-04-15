@@ -93,8 +93,8 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 **Process Flow**
 
 **1.Environment Setup & Credential Loading**
-       → API keys and connection URLs (OpenAI, Tavily, Qdrant) are loaded from the .env file.
-       → Required clients (OpenAI, QdrantClient) are initialized.
+- API keys and connection URLs (OpenAI, Tavily, Qdrant) are loaded from the .env file.
+- Required clients (OpenAI, QdrantClient) are initialized.
 
 Collection Management
 → The user either creates a new Qdrant collection or selects an existing one via the Streamlit sidebar.
