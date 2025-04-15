@@ -92,7 +92,7 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 
 
 ## ⬛ Block Diagram
-(https://drive.google.com/file/d/1sUQZ2yx8lfmTZL5-6JBnLPk6YpeZlzZ-/view)
+![Block Diagram](https://drive.google.com/uc?export=view&id=1sUQZ2yx8lfmTZL5-6JBnLPk6YpeZlzZ-)
 
 
 ## 🔁 Process Flow
