@@ -91,6 +91,7 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 - **Agent Framework:** CrewAI
 
 **Process Flow**
+
 **1. Environment Setup & Credential Loading**
 
 → API keys and connection URLs (OpenAI, Tavily, Qdrant) are loaded from the .env file.
