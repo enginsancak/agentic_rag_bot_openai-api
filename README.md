@@ -159,4 +159,9 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 - Queries and responses are stored in st.session_state to preserve conversation history.
 
 
+## 📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 👥 Support
+Feel free to contact me on linkedin : https://www.linkedin.com/in/engin-sancak
 
