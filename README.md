@@ -59,6 +59,41 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
      ├── README.md                           # Project documentation
      
 
+## 💡 Usage Guide
+
+**1. Setup**
+- Enter the API keys and the Qdrant URL into the corresponding fields in the .env file
+- Run the code in the terminal
+- Create a collection or select an existing one to load the embeddings
+
+**2. Document Upload**
+- Upload a PDF document
+- Click the "Chunk & Index" button to save the embeddings to the Qdrant vector database.
+
+**3.Chatting**
+- Ask questions
+- Wait and view the Answer
+- View all agent outputs in the right panel
+- If the query is related to the documents in the vector database, the answer is retrieved from there; otherwise, a web search is used to generate the response
+
+## 🔧 Available Models
+- **openai gpt-4o**
+
+## 🔍 Technical Details
+**Components**
+- **Frontend:** Streamlit
+- **RAG Implementation:** LangChain
+- **Embeddings:** OpenAI Text Embeddings
+- **LLM Provider:** Groq
+- **PDF Processing:** PDFPlumber
+- **Text Splitting:** RecursiveCharacterTextSplitter
+- **Vector Store:** InMemoryVectorStore
+
+**Process Flow**
+1. Document Upload → PDF Processing → Text Chunking
+2. Chunk Embedding → Vector Storage
+3. Query Processing → Context Retrieval
+4. Asynchronous LLM Processing → Streaming Response
 
 
 
