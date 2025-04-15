@@ -22,7 +22,6 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 - Tavily API key
 - Qdrant URL
 - Qdrant API key
-- Enter the API keys and the Qdrant URL into the corresponding fields in the .env file
   
 ### Installation
 
@@ -77,7 +76,7 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 - If the query is related to the documents in the vector database, the answer is retrieved from there; otherwise, a web search is used to generate the response
 
 ## 🔧 Available Models
-- **openai gpt-4o**
+- **OPENAI GPT-4o**
 
 ## 🔍 Technical Details
 
