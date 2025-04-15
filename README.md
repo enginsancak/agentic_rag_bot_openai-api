@@ -156,14 +156,6 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 - The generated answer is streamed to the user interface in real time.
 - First token latency is measured and shown.
 
-**15. Agent Insights Display**
-- Each agent’s output (rewrite, route, retrieve, evaluate) is displayed for transparency.
-- The user can track each stage of the reasoning.
-
-**16. Session Persistence**
-- Queries and responses are stored in st.session_state to preserve conversation history.
-
-
 ## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
