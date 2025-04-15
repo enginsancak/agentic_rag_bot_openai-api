@@ -132,31 +132,31 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 - Based on the highest similarity score:
 - Score > 0.45 → use vector_store; otherwise → use web_search.
 
-Information Retrieval (Agent 3)
-→ The Retriever Agent fetches information from the selected source (Qdrant or Tavily API):
+**11. Information Retrieval (Agent 3)**
+- The Retriever Agent fetches information from the selected source (Qdrant or Tavily API):
 
 If vector_store → top 4 matching chunks are retrieved.
 
 If web_search → Tavily API is used.
 
-Information Evaluation (Agent 4)
-→ The Evaluator Agent assesses whether the retrieved information is relevant and sufficient.
-→ Decision: yes (sufficient) or no (insufficient).
+**12. Information Evaluation (Agent 4)**
+- The Evaluator Agent assesses whether the retrieved information is relevant and sufficient.
+- Decision: yes (sufficient) or no (insufficient).
 
-Answer Generation with LLM
-→ ChatOpenAI (gpt-4o) generates a response only using the retrieved content.
-→ If Evaluator response is "no" → returns “Unable to answer the given query.”
+**13. Answer Generation with LLM**
+- ChatOpenAI (gpt-4o) generates a response only using the retrieved content.
+- If Evaluator response is "no" → returns “Unable to answer the given query.”
 
-Streaming Response to UI
-→ The generated answer is streamed to the user interface in real time.
-→ First token latency is measured and shown.
+**14. Streaming Response to UI**
+- The generated answer is streamed to the user interface in real time.
+- First token latency is measured and shown.
 
-Agent Insights Display
-→ Each agent’s output (rewrite, route, retrieve, evaluate) is displayed for transparency.
-→ The user can track each stage of the reasoning.
+**15. Agent Insights Display**
+- Each agent’s output (rewrite, route, retrieve, evaluate) is displayed for transparency.
+- The user can track each stage of the reasoning.
 
-Session Persistence
-→ Queries and responses are stored in st.session_state to preserve conversation history.
+**16. Session Persistence**
+- Queries and responses are stored in st.session_state to preserve conversation history.
 
 
 
