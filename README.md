@@ -82,12 +82,13 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 ## 🔍 Technical Details
 **Components**
 - **Frontend:** Streamlit
-- **RAG Implementation:** LangChain
-- **Embeddings:** OpenAI Text Embeddings
-- **LLM Provider:** Groq
+- **Embeddings:** OpenAI Embeddings (text-embedding-3-small)
+- **LLM Provider:** OpenAI GPT-4o
 - **PDF Processing:** PDFPlumber
 - **Text Splitting:** RecursiveCharacterTextSplitter
-- **Vector Store:** InMemoryVectorStore
+- **Vector Store:** Qdrant
+- **Web Search:** Tavily API
+- **Agent Framework:** CrewAI
 
 **Process Flow**
 1. Document Upload → PDF Processing → Text Chunking
