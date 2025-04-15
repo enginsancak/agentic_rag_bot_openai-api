@@ -135,9 +135,9 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 **11. Information Retrieval (Agent 3)**
 - The Retriever Agent fetches information from the selected source (Qdrant or Tavily API):
 
-If vector_store → top 4 matching chunks are retrieved.
+     If vector_store → top 4 matching chunks are retrieved.
 
-If web_search → Tavily API is used.
+     If web_search → Tavily API is used.
 
 **12. Information Evaluation (Agent 4)**
 - The Evaluator Agent assesses whether the retrieved information is relevant and sufficient.
