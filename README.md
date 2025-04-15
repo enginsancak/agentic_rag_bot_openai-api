@@ -108,29 +108,29 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 - Uploaded PDF files are read page-by-page using pdfplumber.
 - All text is merged and converted into clean plain text.
 
-Text Chunking
-→ The full text is split into chunks using RecursiveCharacterTextSplitter.
-→ Chunks are overlapping and ~1000 characters in length.
+**5. Text Chunking**
+- The full text is split into chunks using RecursiveCharacterTextSplitter.
+- Chunks are overlapping and ~1000 characters in length.
 
-Text Embedding
-→ Each chunk is converted into a 1536-dimensional vector using OpenAIEmbeddings (text-embedding-3-small).
+**6. Text Embedding**
+- Each chunk is converted into a 1536-dimensional vector using OpenAIEmbeddings (text-embedding-3-small).
 
-Vector Storage in Qdrant
-→ Generated vectors are stored in the selected collection using QdrantClient.upsert().
-→ Each vector is stored with a payload containing the original text.
+**7. Vector Storage in Qdrant**
+- Generated vectors are stored in the selected collection using QdrantClient.upsert().
+- Each vector is stored with a payload containing the original text.
 
-User Query Submission
-→ The user submits a search query.
-→ The query is logged into the chat history and the flow begins.
+**8. User Query Submission**
+- The user submits a search query.
+- The query is logged into the chat history and the flow begins.
 
-Query Rewriting (Agent 1)
-→ The Rewrite Agent semantically enhances the query.
-→ Goal: Optimize the query for more effective retrieval.
+**9. Query Rewriting (Agent 1)**
+- The Rewrite Agent semantically enhances the query.
+- Goal: Optimize the query for more effective retrieval.
 
-Routing Decision (Agent 2)
-→ The Router Agent performs a similarity search on Qdrant using the rewritten query.
-→ Based on the highest similarity score:
-→ Score > 0.45 → use vector_store; otherwise → use web_search.
+**10. Routing Decision (Agent 2)**
+- The Router Agent performs a similarity search on Qdrant using the rewritten query.
+- Based on the highest similarity score:
+- Score > 0.45 → use vector_store; otherwise → use web_search.
 
 Information Retrieval (Agent 3)
 → The Retriever Agent fetches information from the selected source (Qdrant or Tavily API):
