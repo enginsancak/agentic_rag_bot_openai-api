@@ -80,7 +80,7 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 - **openai gpt-4o**
 
 ## 🔍 Technical Details
-**Components**
+
 - **Frontend:** Streamlit
 - **Embeddings:** OpenAI Embeddings (text-embedding-3-small)
 - **LLM Provider:** OpenAI GPT-4o
@@ -90,7 +90,7 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 - **Web Search:** Tavily API
 - **Agent Framework:** CrewAI
 
-**Process Flow**
+## 🔁 Process Flow
 
 **1. Environment Setup & Credential Loading**
 - API keys and connection URLs (OpenAI, Tavily, Qdrant) are loaded from the .env file.
