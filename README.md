@@ -90,6 +90,11 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 - **Web Search:** Tavily API
 - **Agent Framework:** CrewAI
 
+
+## ⬛ Block Diagram
+(https://drive.google.com/file/d/1sUQZ2yx8lfmTZL5-6JBnLPk6YpeZlzZ-/view)
+
+
 ## 🔁 Process Flow
 
 **1. Environment Setup & Credential Loading**
