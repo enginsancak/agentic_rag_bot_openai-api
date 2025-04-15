@@ -92,68 +92,71 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 
 **Process Flow**
 
-**1. Environment Setup & Credential Loading**
+**1.Environment Setup & Credential Loading**
+       → API keys and connection URLs (OpenAI, Tavily, Qdrant) are loaded from the .env file.
+       → Required clients (OpenAI, QdrantClient) are initialized.
 
-→ API keys and connection URLs (OpenAI, Tavily, Qdrant) are loaded from the .env file.
-→ Required clients (OpenAI, QdrantClient) are initialized.
+Collection Management
+→ The user either creates a new Qdrant collection or selects an existing one via the Streamlit sidebar.
+→ Collections are retrieved using qdrant_client.get_collections() and displayed as buttons.
+→ An active collection must be selected before uploading or retrieving data.
 
-2. Document Upload
+Document Upload
 → The user uploads one or more PDF files via the UI.
 
-3. PDF Processing
+PDF Processing
 → Uploaded PDF files are read page-by-page using pdfplumber.
 → All text is merged and converted into clean plain text.
 
-4. Text Chunking
+Text Chunking
 → The full text is split into chunks using RecursiveCharacterTextSplitter.
 → Chunks are overlapping and ~1000 characters in length.
 
-5. Text Embedding
+Text Embedding
 → Each chunk is converted into a 1536-dimensional vector using OpenAIEmbeddings (text-embedding-3-small).
 
-6. Vector Storage in Qdrant
+Vector Storage in Qdrant
 → Generated vectors are stored in the selected collection using QdrantClient.upsert().
 → Each vector is stored with a payload containing the original text.
 
-7. User Query Submission
+User Query Submission
 → The user submits a search query.
 → The query is logged into the chat history and the flow begins.
 
-8. Query Rewriting (Agent 1)
+Query Rewriting (Agent 1)
 → The Rewrite Agent semantically enhances the query.
 → Goal: Optimize the query for more effective retrieval.
 
-9. Routing Decision (Agent 2)
+Routing Decision (Agent 2)
 → The Router Agent performs a similarity search on Qdrant using the rewritten query.
 → Based on the highest similarity score:
 → Score > 0.45 → use vector_store; otherwise → use web_search.
 
-10. Information Retrieval (Agent 3)
+Information Retrieval (Agent 3)
 → The Retriever Agent fetches information from the selected source (Qdrant or Tavily API):
 
 If vector_store → top 4 matching chunks are retrieved.
 
 If web_search → Tavily API is used.
 
-11. Information Evaluation (Agent 4)
+Information Evaluation (Agent 4)
 → The Evaluator Agent assesses whether the retrieved information is relevant and sufficient.
 → Decision: yes (sufficient) or no (insufficient).
 
-12. Answer Generation with LLM
+Answer Generation with LLM
 → ChatOpenAI (gpt-4o) generates a response only using the retrieved content.
 → If Evaluator response is "no" → returns “Unable to answer the given query.”
 
-13. Streaming Response to UI
+Streaming Response to UI
 → The generated answer is streamed to the user interface in real time.
 → First token latency is measured and shown.
 
-14. Agent Insights Display
+Agent Insights Display
 → Each agent’s output (rewrite, route, retrieve, evaluate) is displayed for transparency.
 → The user can track each stage of the reasoning.
 
-15. Session Persistence
+Session Persistence
 → Queries and responses are stored in st.session_state to preserve conversation history.
-
 
 
 
