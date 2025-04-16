@@ -17,7 +17,7 @@ This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores the
 
 ## 🚀 Quick Start
 ### Prerequisites
-- Python 3.8 or higher
+- Python 3.10.0
 - OpenAI API key
 - Tavily API key
 - Qdrant URL
