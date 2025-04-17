@@ -1,7 +1,7 @@
 # agentic_rag_bot_openai-api
 This Streamlit-based agentic RAG chatbot vectorizes PDF documents and stores them in Qdrant, performs semantic search using OpenAI and Tavily, and leverages CrewAI agents to analyze, rewrite, route, retrieve, and generate responses. Built with Crewai, LangChain, OpenAI, Qdrant, and Tavily technologies.
 ## 🎥 Demo Video
-[![Watch the video](https://drive.google.com/file/d/1PHjkodXvYVOJPmlrylLAWky_R0XaUHgd/view)](https://drive.google.com/file/d/1VZGQTwH4kE1SrjKBroMb_UGqtaQFLzyy/view)
+[![Watch the video](https://drive.google.com/uc?export=view&id=1PHjkodXvYVOJPmlrylLAWky_R0XaUHgd)](https://drive.google.com/file/d/1VZGQTwH4kE1SrjKBroMb_UGqtaQFLzyy/view)
 
 ## 🌟 Features  
 
